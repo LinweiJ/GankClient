@@ -3,4 +3,13 @@
     <string name="android">Android</string>
     <string name="ios">IOS</string>
     <string name="girl">妹子</string>
+
+
+    <!--BaseQuickAdapter提示-->
+    <string name="w_loading_data">正在加载中...</string>
+    <string name="w_not_data_click_retry">暂无数据 点击重试</string>
+    <string name="w_network_error_click_retry">网络异常 点击重试</string>
+    <string name="w_loading_more">加载更多中...</string>
+    <string name="w_load_more_failed">加载失败，请点我重试</string>
+    <string name="w_load_more_end">没有更多数据</string>
 </resources>

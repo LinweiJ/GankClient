@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -6,6 +6,26 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="RvLoadingProgressBar" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:indeterminateTintMode" tools:targetApi="lollipop">src_atop</item>
+    </style>
+
+    <style name="textView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="textView.hint">
+        <item name="android:textColor">@color/color_text_hint</item>
+    </style>
+    <style name="textView.hint.16">
+        <item name="android:textSize">@dimen/material_16sp</item>
+    </style>
+    <style name="textView.hint.14">
+        <item name="android:textSize">@dimen/material_14sp</item>
     </style>
 
 </resources>
