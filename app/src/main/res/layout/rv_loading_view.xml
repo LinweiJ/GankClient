@@ -24,7 +24,7 @@
 			android:layout_height="@dimen/material_20dp"
 			android:layout_marginRight="@dimen/material_8dp"/>
 		<TextView
-			style="@style/textView_hint_14"
+			style="@style/textView.hint.14"
 			android:text="@string/w_loading_data"
 		/>
 	</LinearLayout>

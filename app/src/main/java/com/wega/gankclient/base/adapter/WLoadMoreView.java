@@ -4,6 +4,7 @@ package com.wega.gankclient.base.adapter;
 import com.chad.library.adapter.base.loadmore.LoadMoreView;
 import com.wega.gankclient.R;
 
+
 /**
  * Created by lwj on 2017/9/28.
  */

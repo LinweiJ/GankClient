@@ -22,7 +22,7 @@
 
 		<TextView
 			android:id="@+id/loading_text"
-			style="@style/textView_hint_14"
+			style="@style/textView.hint.14"
 			android:layout_marginLeft="@dimen/material_4dp"
 			android:text="@string/w_loading_more"
 		/>
@@ -37,7 +37,7 @@
 
 		<TextView
 			android:id="@+id/tv_prompt"
-			style="@style/textView_hint_14"
+			style="@style/textView.hint.14"
 			android:layout_gravity="center"
 			android:text="@string/w_load_more_failed"
 
@@ -52,7 +52,7 @@
 		android:visibility="gone">
 
 		<TextView
-			style="@style/textView_hint_14"
+			style="@style/textView.hint.14"
 			android:layout_gravity="center"
 			android:text="@string/w_load_more_end"/>
 	</FrameLayout>

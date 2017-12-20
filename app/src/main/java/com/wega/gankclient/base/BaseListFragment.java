@@ -58,12 +58,14 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mLayout == null) {
+
             mInflater = inflater;
             mLayout = inflater.inflate(setLayout(), container, false);
+            unbinder = ButterKnife.bind(this, mLayout);
             initData();
             initUI();
         }
-        unbinder = ButterKnife.bind(this, mLayout);
+
         return mLayout;
     }
 
@@ -203,7 +205,7 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
      *
      * @param data
      */
-    protected void refreshListByData(List<T> data) {
+    public void refreshListByData(List<T> data) {
         mIsLoadMoreEnd = data == null || data.size() < page_rows;
         if (data != null && data.size() > 0) {
             if (page == 1) {//第一次加载or 刷新

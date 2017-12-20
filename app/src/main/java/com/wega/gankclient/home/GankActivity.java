@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.wega.gankclient.R;
@@ -40,21 +41,34 @@ public class GankActivity extends BaseActivity {
         mFragmentManager = getSupportFragmentManager();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        switchContainer( AndroidFragment.TAG);
+    }
+
+
+
     void switchContainer(String tag)
     {
 //        mFragmentManager.findFragmentByTag();
         Fragment fragmentByTag = mFragmentManager.findFragmentByTag(tag);
-        Fragment fragment=null;
+        Fragment fragment=fragmentByTag;
         switch(tag){
             case AndroidFragment.TAG:
                 if(fragmentByTag==null)
                 {
-                    fragment = new AndroidFragment();
+
+                }else{
+
                 }
+                fragment = new AndroidFragment();
                 break;
         }
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.replace(R.id.fl_container,fragment,tag);
+        transaction.commit();
+        Log.d("GankActivity",""+fragment);
 
 
     }
