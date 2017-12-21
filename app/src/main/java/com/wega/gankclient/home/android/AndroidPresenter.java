@@ -44,7 +44,6 @@ public class AndroidPresenter {
                 {
                     mView.refreshListByData(gankBean.results);
                 }
-
             }
 
             @Override
@@ -63,8 +62,5 @@ public class AndroidPresenter {
     public void setView(AndroidFragment fragment){
 
     }
-
-
-
 
 }
