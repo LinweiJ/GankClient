@@ -172,10 +172,7 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
      */
     protected abstract WBaseAdapter setAdapter();
 
-    /**
-     * 获取列表数据
-     */
-    protected abstract List getListData(List<T> data);
+
 
     /**
      * 刷新
@@ -195,7 +192,6 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
      * 底部加载更多
      */
     protected void loadMore() {
-
         page++;
     }
 
@@ -247,7 +243,7 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
      *
      * @param resData
      */
-    private void addListByData(List resData) {
+    public void addListByData(List<T> resData) {
 
         mIsLoadMoreEnd = resData == null || resData.size() < page_rows;
 

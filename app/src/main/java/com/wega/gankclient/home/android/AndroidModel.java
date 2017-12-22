@@ -10,11 +10,12 @@ import io.reactivex.Observable;
  * Created by lwj on 2017/12/16 23:56.
  */
 
-public class AndroidModel {
+public class AndroidModel implements AndroidContract.Model{
 
 
     private GankServer gankServer;
 
+    @Override
     public Observable<GankBean> getAndroid(int page_rows,int page){
         GankServer gankServer =  RetrofitHelper.getInstance().getGankServer();
         Observable<GankBean> andriod = gankServer.getAndriod(page_rows, page);
