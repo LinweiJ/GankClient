@@ -25,6 +25,7 @@
         android:layout_weight="1"/>
 
     <android.support.design.widget.TabLayout
+        android:id="@+id/tl_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -38,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/icon_android"
+            android:tag="@string/android"
             android:text="@string/android"
             app:textAllCaps="false" />
 
@@ -45,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/icon_ios"
+            android:tag="@string/ios"
             android:text="@string/ios"
             app:textAllCaps="false" />
 
@@ -52,6 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/icon_girl"
+            android:tag="@string/girl"
             android:text="@string/girl"
             android:textAllCaps="false" />
     </android.support.design.widget.TabLayout>

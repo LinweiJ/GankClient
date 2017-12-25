@@ -19,12 +19,16 @@ import retrofit2.http.Url;
 public interface GankServer {
 
     String ANDROID="data/Android/";
+    String IOS="data/iOS/";
 //    String ANDROID="http://gank.io/api/data/Android/";
 
     @GET(ANDROID+"{page_rows}/{page}")
     Observable<GankBean> getAndriod(
             @Path("page_rows") int page_rows ,
                                     @Path("page") int page);
-
+    @GET(IOS+"{page_rows}/{page}")
+    Observable<GankBean> getIOS(
+            @Path("page_rows") int page_rows ,
+            @Path("page") int page);
 
 }

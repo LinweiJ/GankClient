@@ -37,7 +37,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initData();
         initUI();
+        loadData();
     }
+
+
 
 
     /**
@@ -62,7 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setupToolbar();
         setupLoadingDialog();
     }
-
+    protected  void loadData(){};
     /**
      * 设置加载框
      */

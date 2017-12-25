@@ -1,47 +1,45 @@
-package com.wega.gankclient.home.android;
+package com.wega.gankclient.home.ios;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.wega.gankclient.base.BaseListFragment;
 import com.wega.gankclient.base.adapter.WBaseAdapter;
 import com.wega.gankclient.data.GankEntity;
-
-import java.util.List;
+import com.wega.gankclient.home.android.AndroidAdapter;
+import com.wega.gankclient.home.android.AndroidContract;
+import com.wega.gankclient.home.android.AndroidPresenter;
 
 /**
  * Created by lwj on 2017/12/16 23:55.
  */
 
-public class AndroidFragment extends BaseListFragment<GankEntity> implements
-        AndroidContract.View<GankEntity> {
+public class IOSFragment extends BaseListFragment<GankEntity> implements
+        IOSContract.View<GankEntity> {
 
-    public static final String TAG="Android";
-    private AndroidPresenter mPresenter;
+    public static final String TAG="IOS";
+    private IOSContract.Presenter mPresenter;
 
-    public AndroidFragment( ) {
+    public IOSFragment( ) {
         Log.d("AndroidFragment",TAG);
     }
-
     /**
      * onCreateView-->initData-->initUI-->onRefresh
      */
     @Override
     protected WBaseAdapter setAdapter() {
-        AndroidAdapter androidAdapter = new AndroidAdapter(null);
-        return androidAdapter;
+        IOSAdapter iOSAdapter = new IOSAdapter(null);
+        return iOSAdapter;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mPresenter = new AndroidPresenter(this);
+        mPresenter = new IOSPresenter(this);
         mPresenter.setPageRows(page_rows);
         return super.onCreateView(inflater, container, savedInstanceState);
     }

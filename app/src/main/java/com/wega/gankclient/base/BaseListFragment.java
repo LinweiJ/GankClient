@@ -310,6 +310,6 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+//        unbinder.unbind();
     }
 }
