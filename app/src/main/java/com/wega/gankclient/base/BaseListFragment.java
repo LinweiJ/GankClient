@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -43,7 +44,7 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout mSwipeRefreshLayout;
     Unbinder unbinder;
-    private LinearLayoutManager mLayoutManager;
+    protected LinearLayoutManager mLayoutManager;
     private View mLoadingView;
     private View mNotDataView;
     private View mErrorView;
@@ -113,14 +114,22 @@ public abstract class BaseListFragment<T>  extends Fragment implements SwipeRefr
 
     }
 
+    protected void setupLayoutManager(){
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
+//        mLayoutManager = new GridLayoutManager(getActivity(),2);
+//        mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+    }
+
     /**
      * 设置RecyclerView
      */
     private void setupRecyclerView() {
 
         //布局管理
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        setupLayoutManager();
+
         mRecyclerView.setLayoutManager(mLayoutManager);
         //适配器
         mBaseListAdapter = setAdapter();

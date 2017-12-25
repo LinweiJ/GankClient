@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import com.wega.gankclient.R;
 import com.wega.gankclient.base.BaseActivity;
 import com.wega.gankclient.home.android.AndroidFragment;
+import com.wega.gankclient.home.girl.GirlFragment;
 import com.wega.gankclient.home.ios.IOSFragment;
 
 import butterknife.BindView;
@@ -104,6 +105,15 @@ public class GankActivity extends BaseActivity {
                 }
                 transaction.commit();
                 break;
+            case GirlFragment.TAG://妹子
+                if (fragmentByTag == null) {
+                    fragment = new GirlFragment();
+                    transaction.add(R.id.fl_container, fragment, tag);
+                } else {
+                    transaction.attach(fragmentByTag);
+                }
+                transaction.commit();
+                break;
         }
         Log.d("GankActivity", "" + fragment);
     }
@@ -127,6 +137,13 @@ public class GankActivity extends BaseActivity {
                     transaction.detach(fragmentByTag);
                 }
                 break;
+            case GirlFragment.TAG://妹子
+                if (fragmentByTag == null) {
+                } else {
+                    transaction.detach(fragmentByTag);
+                }
+                break;
+
         }
         transaction.commit();
         Log.d("GankActivity", "" + fragment);

@@ -20,6 +20,7 @@ public interface GankServer {
 
     String ANDROID="data/Android/";
     String IOS="data/iOS/";
+    String GIRL="data/福利/";
 //    String ANDROID="http://gank.io/api/data/Android/";
 
     @GET(ANDROID+"{page_rows}/{page}")
@@ -30,5 +31,8 @@ public interface GankServer {
     Observable<GankBean> getIOS(
             @Path("page_rows") int page_rows ,
             @Path("page") int page);
-
+    @GET(GIRL+"{page_rows}/{page}")
+    Observable<GankBean> getGirl(
+            @Path("page_rows") int page_rows ,
+            @Path("page") int page);
 }
