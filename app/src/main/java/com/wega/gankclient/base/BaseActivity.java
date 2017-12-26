@@ -5,6 +5,7 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -76,14 +77,15 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 设置toolbar
      */
     private void setupToolbar() {
-        setSupportActionBar(toolbar);
         toolbar.setTitle(setTitle());
+        setSupportActionBar(toolbar);
     }
 
     /**
      * 设置toolbar title
      */
     protected String setTitle() {
+        Log.e("setTitle",null+"");
         return null;
     }
 
@@ -94,6 +96,8 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @return
      */
     protected String setTitle(String title) {
+        toolbar.setTitle(title);
+        Log.e("setTitle",toolbar.getTitle()+title);
         return title;
     }
 

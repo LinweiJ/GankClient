@@ -115,7 +115,13 @@ public class GankActivity extends BaseActivity {
                 transaction.commit();
                 break;
         }
+        setTitle(tag);
         Log.d("GankActivity", "" + fragment);
+    }
+
+    @Override
+    protected String setTitle() {
+        return "Android";
     }
 
     private void detachContainer(String tag) {
