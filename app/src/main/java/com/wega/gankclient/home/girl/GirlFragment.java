@@ -34,7 +34,7 @@ public class GirlFragment extends BaseListFragment<GankEntity> implements
      */
     @Override
     protected WBaseAdapter setAdapter() {
-        GirlAdapter girlAdapter = new GirlAdapter(null);
+        GirlAdapter girlAdapter = new GirlAdapter(this);
         return girlAdapter;
     }
 
