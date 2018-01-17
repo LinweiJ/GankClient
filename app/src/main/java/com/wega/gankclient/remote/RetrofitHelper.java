@@ -1,6 +1,6 @@
 package com.wega.gankclient.remote;
 
-import com.wega.gankclient.remote.api.GankServer;
+import com.wega.gankclient.remote.api.GankService;
 
 /**
  * Created by lwj on 2017/12/20 00:04.
@@ -9,10 +9,10 @@ import com.wega.gankclient.remote.api.GankServer;
 public class RetrofitHelper {
 
 
-    private GankServer mGankServer;
+    private GankService mGankService;
 
     public RetrofitHelper() {
-        mGankServer = RetrofitManager.getInstance().getRetrofit().create(GankServer.class);
+        mGankService = RetrofitManager.getInstance().getRetrofit().create(GankService.class);
     }
 
     private static RetrofitHelper mAPIClient;
@@ -25,7 +25,7 @@ public class RetrofitHelper {
         return mAPIClient;
     }
 
-    public GankServer getGankServer() {
-        return mGankServer;
+    public GankService getGankServer() {
+        return mGankService;
     }
 }

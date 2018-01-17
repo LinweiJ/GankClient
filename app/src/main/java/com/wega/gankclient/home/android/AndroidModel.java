@@ -2,7 +2,7 @@ package com.wega.gankclient.home.android;
 
 import com.wega.gankclient.data.GankBean;
 import com.wega.gankclient.remote.RetrofitHelper;
-import com.wega.gankclient.remote.api.GankServer;
+import com.wega.gankclient.remote.api.GankService;
 
 import io.reactivex.Observable;
 
@@ -13,12 +13,12 @@ import io.reactivex.Observable;
 public class AndroidModel implements AndroidContract.Model{
 
 
-    private GankServer gankServer;
+    private GankService gankService;
 
     @Override
     public Observable<GankBean> getAndroid(int page_rows,int page){
-        GankServer gankServer =  RetrofitHelper.getInstance().getGankServer();
-        Observable<GankBean> andriod = gankServer.getAndriod(page_rows, page);
+        GankService gankService =  RetrofitHelper.getInstance().getGankServer();
+        Observable<GankBean> andriod = gankService.getAndriod(page_rows, page);
         return andriod;
     }
 

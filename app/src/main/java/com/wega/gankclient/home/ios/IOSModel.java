@@ -1,9 +1,8 @@
 package com.wega.gankclient.home.ios;
 
 import com.wega.gankclient.data.GankBean;
-import com.wega.gankclient.home.android.AndroidContract;
 import com.wega.gankclient.remote.RetrofitHelper;
-import com.wega.gankclient.remote.api.GankServer;
+import com.wega.gankclient.remote.api.GankService;
 
 import io.reactivex.Observable;
 
@@ -14,12 +13,12 @@ import io.reactivex.Observable;
 public class IOSModel implements IOSContract.Model{
 
 
-    private GankServer gankServer;
+    private GankService gankService;
 
     @Override
     public Observable<GankBean> getIOS(int page_rows,int page){
-        GankServer gankServer =  RetrofitHelper.getInstance().getGankServer();
-        Observable<GankBean> iOS = gankServer.getIOS(page_rows, page);
+        GankService gankService =  RetrofitHelper.getInstance().getGankServer();
+        Observable<GankBean> iOS = gankService.getIOS(page_rows, page);
         return iOS;
     }
 

@@ -1,9 +1,8 @@
 package com.wega.gankclient.home.girl;
 
 import com.wega.gankclient.data.GankBean;
-import com.wega.gankclient.home.ios.IOSContract;
 import com.wega.gankclient.remote.RetrofitHelper;
-import com.wega.gankclient.remote.api.GankServer;
+import com.wega.gankclient.remote.api.GankService;
 
 import io.reactivex.Observable;
 
@@ -14,12 +13,12 @@ import io.reactivex.Observable;
 public class GirlModel implements GirlContract.Model{
 
 
-    private GankServer gankServer;
+    private GankService gankService;
 
     @Override
     public Observable<GankBean> getGirl(int page_rows,int page){
-        GankServer gankServer =  RetrofitHelper.getInstance().getGankServer();
-        Observable<GankBean> girl = gankServer.getGirl(page_rows, page);
+        GankService gankService =  RetrofitHelper.getInstance().getGankServer();
+        Observable<GankBean> girl = gankService.getGirl(page_rows, page);
         return girl;
     }
 

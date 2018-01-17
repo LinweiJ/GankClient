@@ -42,7 +42,9 @@ dependencies {
     implementation "com.github.LinweiJ:PictureBrowser:0.0.1"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
-    annotationProcessor "com.github.bumptech.glide:okhttp3-integration:$rootProject.glideVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.glideVersion"
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
 
 }
 configurations.all {

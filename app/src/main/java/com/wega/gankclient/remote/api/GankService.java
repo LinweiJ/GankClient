@@ -16,7 +16,7 @@ import retrofit2.http.Url;
  * Created by lwj on 2017/12/20 00:05.
  */
 
-public interface GankServer {
+public interface GankService {
 
     String ANDROID="data/Android/";
     String IOS="data/iOS/";

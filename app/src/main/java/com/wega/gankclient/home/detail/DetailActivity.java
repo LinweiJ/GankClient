@@ -38,24 +38,28 @@ public class DetailActivity extends AppCompatActivity {
         setWebView();
     }
 
-    private void setWebView(){
-//声明WebSettings子类
+
+
+
+
+
+    private void setWebView() {
+        //声明WebSettings子类
         WebSettings webSettings = wvDetail.getSettings();
 
-//如果访问的页面中要与Javascript交互，则webview必须设置支持Javascript
+        //如果访问的页面中要与Javascript交互，则webview必须设置支持Javascript
         webSettings.setJavaScriptEnabled(true);
-// 若加载的 html 里有JS 在执行动画等操作，会造成资源浪费（CPU、电量）
-// 在 onStop 和 onResume 里分别把 setJavaScriptEnabled() 给设置成 false 和 true 即可
+        // 若加载的 html 里有JS 在执行动画等操作，会造成资源浪费（CPU、电量）
+        // 在 onStop 和 onResume 里分别把 setJavaScriptEnabled() 给设置成 false 和 true 即可
 
         //步骤3. 复写shouldOverrideUrlLoading()方法，使得打开网页时不调用系统浏览器， 而是在本WebView中显示
-        wvDetail.setWebViewClient(new WebViewClient(){
+        wvDetail.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
             }
         });
-
 
 
     }
